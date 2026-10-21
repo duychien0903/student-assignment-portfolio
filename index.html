@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人作業成果展示平台 — 裴維戰 (1111310133) | 資訊科技應用系</title>
+  <meta name="description" content="裴維戰之大專院校個人作業成果展示平台。記錄資訊科技應用系日常實作課程作業、程式原始碼、截圖佐證與學習心得。">
+  <meta name="author" content="裴維戰">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+
+  <!-- Fonts: Noto Sans TC & JetBrains Mono for Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. HEADER & NAVIGATION BAR
+       Sticky navigation with tech branding, anchor links, and mobile drawer
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="返回首頁">
+        <div class="logo-icon-box">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="brand-title">個人作業成果展示平台</span>
+          <span class="brand-subtitle">Student Assignment Portfolio</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" aria-label="主要導覽">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">首頁</a></li>
+          <li><a href="#assignments" class="nav-link">作業列表</a></li>
+          <li><a href="#courses" class="nav-link">課程分類</a></li>
+          <li><a href="#about" class="nav-link">關於我</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action & Mobile Toggle -->
+      <div class="header-actions">
+        <a href="#assignments" class="btn btn-primary btn-header">
+          <span>瀏覽作業</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="切換行動版導覽選單" aria-expanded="false" aria-controls="mobileNav">
+          <span class="hamburger-box">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNav" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <div class="mobile-nav-header">
+          <div class="logo-icon-box small">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <span class="mobile-nav-title">作業導覽系統</span>
+          <button type="button" class="mobile-close-btn" id="mobileCloseBtn" aria-label="關閉選單">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="#hero" class="mobile-nav-link">首頁 (Home)</a></li>
+          <li><a href="#assignments" class="mobile-nav-link">作業成果清單 (Assignments)</a></li>
+          <li><a href="#courses" class="mobile-nav-link">修習課程領域 (Courses)</a></li>
+          <li><a href="#about" class="mobile-nav-link">學生資訊 (About Me)</a></li>
+        </ul>
+        <div class="mobile-nav-cta">
+          <a href="#assignments" class="btn btn-primary btn-block mobile-drawer-btn">快速檢視作業</a>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  </header>
+
+
+  <main id="mainContent">
+
+    <!-- =========================================================================
+         2. HERO SECTION
+         Professional student profile hero, real metrics computed from data
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Student Badge -->
+          <div class="student-id-badge">
+            <span class="badge-status-dot"></span>
+            <span class="badge-label">大專院校個人實作成果展示紀錄</span>
+          </div>
+
+          <h1 class="hero-title">
+            我的學習歷程與<span class="highlight-blue">實作成果</span>
+          </h1>
+
+          <p class="hero-description">
+            記錄每一次實作、整理每一份成果，持續累積資訊科技專業能力。每項成果均包含目標規劃、程式碼解析、截圖佐證與實作反思。
+          </p>
+
+          <!-- Student Profile Summary Card -->
+          <div class="student-info-card">
+            <div class="info-item">
+              <span class="info-label">學生姓名</span>
+              <strong class="info-value student-name-text">裴維戰</strong>
+            </div>
+            <div class="info-divider"></div>
+            <div class="info-item">
+              <span class="info-label">學生學號</span>
+              <strong class="info-value code-font student-id-text">1111310133</strong>
+            </div>
+            <div class="info-divider"></div>
+            <div class="info-item">
+              <span class="info-label">就讀系所</span>
+              <strong class="info-value student-dept-text">資訊科技應用系</strong>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#assignments" class="btn btn-primary btn-lg">
+              <span>瀏覽作業</span>
+              <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#about" class="btn btn-secondary btn-lg">
+              <span>關於作者</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Stats Dashboard -->
+        <div class="hero-stats-wrapper">
+          <div class="stats-dashboard-card">
+            <div class="stats-card-header">
+              <span class="stats-header-tag">即時統計面板</span>
+              <span class="stats-status-live">● 資料庫同步中</span>
+            </div>
+
+            <div class="stats-metrics-grid">
+              <!-- Metric 1: Total Assignments -->
+              <div class="metric-box">
+                <span class="metric-num" id="statTotalAssignments">0</span>
+                <span class="metric-label">已發布實作作業</span>
+              </div>
+
+              <!-- Metric 2: Completed Rate -->
+              <div class="metric-box">
+                <span class="metric-num text-success" id="statCompletedRate">100%</span>
+                <span class="metric-label">考核通過率</span>
+              </div>
+
+              <!-- Metric 3: Latest Update Date -->
+              <div class="metric-box full-width">
+                <div class="latest-update-row">
+                  <span class="latest-icon">🕒</span>
+                  <div>
+                    <span class="metric-sublabel">最近更新日期</span>
+                    <strong class="latest-date-text code-font" id="statLatestDate">載入中...</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stats-footer-note">
+              <span>✓ 數據皆依據 <code>data/assignments.js</code> 實際作業資料即時動態計算。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         3. ASSIGNMENTS SECTION (FILTER, SEARCH & CARDS)
+         Real-time search, category filtering & card display
+         ========================================================================= -->
+    <section class="assignments-section section-padding" id="assignments">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">實作作業成果</span>
+          <h2 class="section-title">歷次實作作業列表</h2>
+          <p class="section-subtitle">
+            依據完成時間倒序排列（最新作業顯示於最上方），點擊卡片可檢視完整實作步驟、截圖佐證與反思。
+          </p>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="assignments-toolbar">
+          <!-- Search Box -->
+          <div class="search-box-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="assignmentSearchInput" class="search-input" placeholder="搜尋作業名稱、關鍵字或技術（例：MySQL、Grid、SQL、HTML5）..." aria-label="搜尋作業">
+            <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="清除搜尋內容" style="display: none;">&times;</button>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-pills-row" id="categoryFilterContainer">
+            <!-- Dynamically populated from COURSE_CATEGORIES -->
+          </div>
+        </div>
+
+        <!-- Assignments Grid -->
+        <div class="assignments-grid" id="assignmentsGrid">
+          <!-- Populated dynamically via JavaScript from ASSIGNMENTS_DATA -->
+        </div>
+
+        <!-- Empty State (When no assignments match) -->
+        <div class="empty-state-card" id="emptyStateBox" style="display: none;">
+          <div class="empty-state-icon">🔍</div>
+          <h3 class="empty-state-title">查無相符之作業紀錄</h3>
+          <p class="empty-state-desc">請嘗試使用不同的搜尋關鍵字，或切換其他課程分類篩選條件。</p>
+          <button type="button" class="btn btn-secondary btn-sm" id="resetFilterBtn">重設篩選條件</button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         4. COURSE OVERVIEW SECTION
+         Categorized breakdown of academic IT subjects
+         ========================================================================= -->
+    <section class="courses-section section-padding bg-light" id="courses">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">課程範疇分類</span>
+          <h2 class="section-title">修習課程與技術領域</h2>
+          <p class="section-subtitle">
+            涵蓋前端介面工程、後端資料庫設計及資訊應用領域，落實理論與實作並重之學習方針。
+          </p>
+        </div>
+
+        <div class="courses-summary-grid" id="coursesSummaryGrid">
+          <!-- Populated dynamically -->
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         5. ABOUT STUDENT SECTION
+         Clean, professional student introduction without sensitive personal data
+         ========================================================================= -->
+    <section class="about-section section-padding" id="about">
+      <div class="container">
+        
+        <div class="about-wrapper">
+          <!-- Left: Avatar / Badge Card -->
+          <div class="about-card-left">
+            <div class="avatar-wrap">
+              <img src="./images/assignments/avatar.svg" alt="裴維戰之個人頭像" width="160" height="160" class="avatar-img">
+              <div class="avatar-status-badge">Student</div>
+            </div>
+            <h3 class="student-name-display student-name-text">裴維戰</h3>
+            <span class="student-dept-display student-dept-text">資訊科技應用系</span>
+            <span class="student-id-display code-font student-id-text">學號：1111310133</span>
+
+            <div class="about-links-group">
+              <a href="https://hwu1111310133.neocities.org" target="_blank" rel="noopener" class="about-link-pill">
+                🌐 Neocities 站點
+              </a>
+              <a href="https://github.com/duychien0903" target="_blank" rel="noopener" class="about-link-pill">
+                🐙 GitHub 主頁
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Details & Interests -->
+          <div class="about-card-right">
+            <span class="section-tag">關於作者</span>
+            <h2 class="about-title">專注技術實踐，將每一次作業當作專案累積</h2>
+            <p class="about-bio-text" id="aboutBioText">
+              就讀於資訊科技應用系，熱衷於現代網頁開發技術、資料庫系統規劃與演算法實踐。堅持將每一次實作作業整理成標準文檔，方便自我複習與提供授課教師即時查閱考核。
+            </p>
+
+            <div class="about-details-grid">
+              <div class="about-detail-item">
+                <span class="detail-label">學制與系所</span>
+                <strong class="detail-val">大學部 • 資訊科技應用系</strong>
+              </div>
+              <div class="about-detail-item">
+                <span class="detail-label">學號</span>
+                <strong class="detail-val code-font student-id-text">1111310133</strong>
+              </div>
+              <div class="about-detail-item">
+                <span class="detail-label">核心興趣領域</span>
+                <div class="interest-tags-wrap" id="interestTagsContainer">
+                  <!-- Populated from STUDENT_PROFILE.interests -->
+                </div>
+              </div>
+              <div class="about-detail-item">
+                <span class="detail-label">成果發布原則</span>
+                <strong class="detail-val text-muted">真實實作數據 • 完整截圖佐證 • 代碼結構化</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================================
+       6. SITE FOOTER
+       Dynamic auto-updating current year, author information & copyright
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <span class="footer-brand-title">個人作業成果展示平台</span>
+          <span class="footer-brand-sub">Student Assignment Portfolio</span>
+        </div>
+        <p class="footer-tagline">
+          個人學習成果紀錄 • 醒吾科技大學 資訊科技應用系 裴維戰
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-meta-info">
+          <span>姓名：裴維戰</span>
+          <span class="footer-dot">•</span>
+          <span>學號：1111310133</span>
+          <span class="footer-dot">•</span>
+          <span>系所：資訊科技應用系</span>
+        </div>
+        <p class="footer-copyright">
+          © <span id="currentYear">2026</span> 裴維戰. 個人學習成果展示保留所有權利.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- =========================================================================
+       MODAL 1: ASSIGNMENT DETAIL VIEW (作業詳細檢視對話框)
+       Detailed step breakdown, screenshot gallery & reflections
+       ========================================================================= -->
+  <div class="modal-backdrop" id="assignmentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalAssignmentTitle">
+    <div class="modal-dialog modal-dialog-lg">
+      <div class="modal-content">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="modal-header-meta">
+            <span class="modal-course-badge" id="mCourseBadge">課程名稱</span>
+            <span class="modal-status-badge" id="mStatusBadge">已完成</span>
+            <span class="modal-date-text code-font" id="mDateText">2026-10-18</span>
+          </div>
+          <button type="button" class="modal-close" id="modalCloseBtn" aria-label="關閉作業詳情視窗">&times;</button>
+        </div>
+
+        <h2 class="modal-assignment-title" id="modalAssignmentTitle">作業標題名稱</h2>
+
+        <!-- Modal Body Content -->
+        <div class="modal-body" id="modalAssignmentBody">
+          <!-- Populated dynamically via JavaScript -->
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="modalBackBtn">返回作業列表</button>
+          <a href="#assignments" class="btn btn-primary" id="modalNextBtn">瀏覽其他作業</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       MODAL 2: SCREENSHOT LIGHTBOX VIEWER (截圖放大檢視)
+       Zoom in on screenshots without losing aspect ratio
+       ========================================================================= -->
+  <div class="lightbox-backdrop" id="lightboxModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close" id="lightboxCloseBtn" aria-label="關閉放大截圖">&times;</button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="放大實作截圖" id="lightboxImg" class="lightbox-img">
+      </div>
+      <p class="lightbox-caption" id="lightboxCaption">截圖說明文字</p>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       FLOATING BACK TO TOP BUTTON
+       ========================================================================= -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="捲動至頁面頂端">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+
+  <!-- Scripts (Load data first, then controller) -->
+  <script src="./data/assignments.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
